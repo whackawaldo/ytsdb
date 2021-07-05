@@ -41,6 +41,8 @@ if __name__ == "__main__":
     # If we found more movies, update snapshot
     with open("output/movies.json", "w") as fh:
         if len(movies) > len(prev):
+            print("Updating movies...")
             json.dump(movies, fh)
         else:
+            print("Movies already up to date")
             json.dump(prev, fh)
