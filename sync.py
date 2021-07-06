@@ -34,7 +34,7 @@ if __name__ == "__main__":
             movies[key] = {col: mov.get(col) for col in KEEP_COLS}
             movies[key]["genres"] = ",".join(mov.get("genres", []))
             torrents = mov.get("torrents") or []
-            for quality in ("720p", "1028p"):
+            for quality in ("720p", "1080p"):
                 urls = [t["url"] for t in torrents if t["quality"] == quality]
                 if urls: movies[key][quality] = urls[0]
 
