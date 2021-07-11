@@ -3,6 +3,10 @@ on:
 
   # Allow to run on demand
   workflow_dispatch: {}
+  
+  # Run daily at 3 AM
+  schedule:
+    - cron:  '0 3 * * *'
 
 jobs:
   build-and-deploy:
